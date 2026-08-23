@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tkit Studio</title>
+<meta name="description" content="Tkit Studio — small daily rituals, built one at a time. Pulse, Koan, and Glyph.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tkit Studio">
+<meta property="og:description" content="Small daily rituals, built one at a time.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tkit.studio">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:,">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<main>
+
+  <header class="hero">
+    <h1 class="hero-line">Tkit Studio</h1>
+    <p class="hero-sub">Small apps that invite us to share experiences and check in with each other.</p>
+  </header>
+
+  <section class="shelf" aria-label="Apps">
+    <p class="eyebrow shelf-label">In the studio</p>
+
+    <!-- PULSE — live -->
+    <a class="card card--live" href="https://pulse.tkit.studio" style="--accent:#0A1E5A; --fg:#FFFFFF;">
+      <div class="card-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <circle class="mark-ring" cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+          <circle class="mark-dot" cx="24" cy="24" r="3.5" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <h2 class="card-name">Pulse</h2>
+          <span class="tag tag--live">Live</span>
+        </div>
+        <p class="card-desc">Tap the word that feels right. Watch your instant collide with everyone else's.</p>
+        <span class="card-link">pulse.tkit.studio <span class="arrow">→</span></span>
+      </div>
+    </a>
+
+    <!-- KOAN — coming soon -->
+    <div class="card card--soon" style="--accent:#0F9E86; --fg:#FFFFFF;">
+      <div class="card-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <path class="mark-breath" d="M6 26 Q 14 14, 24 26 T 42 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <h2 class="card-name">Koan</h2>
+          <span class="tag tag--soon">Coming soon</span>
+        </div>
+        <p class="card-desc">A riddle, a blink of a choice, and a quiet read on where you stand — against the crowd, and against your own history.</p>
+      </div>
+    </div>
+
+    <!-- GLYPH — coming soon -->
+    <div class="card card--soon" style="--accent:#C23B76; --fg:#FFFFFF;">
+      <div class="card-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="34" height="34">
+          <circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <text x="24" y="31" text-anchor="middle" font-family="Fraunces, serif" font-size="20" fill="currentColor">G</text>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-top">
+          <h2 class="card-name">Glyph</h2>
+          <span class="tag tag--soon">Coming soon</span>
+        </div>
+        <p class="card-desc">One word a day, added to a sentence the whole group is quietly writing together — read in full when the cycle ends.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site-footer">
+    <p>tkit.studio — named after a dog</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
