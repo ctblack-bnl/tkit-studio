@@ -1,0 +1,310 @@
+/* ---------------------------------------------
+   Tkit Studio — tokens
+--------------------------------------------- */
+:root {
+  --canvas: #241A32;
+  --canvas-raised: #2E2140;
+  --paper: #F6F1E7;
+  --ink: #1C1812;
+  --muted: #C3B4D6;
+  --muted-dim: #8B7BA3;
+  --hairline: #3A2C4F;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-headline: "Bricolage Grotesque", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --edge: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* subtle studio-wall grain, purely decorative */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 180px 180px;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* ---------------------------------------------
+   Hero
+--------------------------------------------- */
+.hero {
+  padding: 56px 0 40px;
+}
+
+.hero-line {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(2.2rem, 9.5vw, 3.6rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  color: var(--paper);
+  margin: 0.5rem 0 1rem;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* ---------------------------------------------
+   Shelf / cards
+--------------------------------------------- */
+.shelf {
+  padding-bottom: 48px;
+}
+
+.shelf-label {
+  margin-bottom: 14px;
+}
+
+.card {
+  --accent: #999;
+  --fg: #fff;
+  position: relative;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 22px;
+  margin-bottom: 14px;
+  border-radius: var(--edge);
+  border: none;
+  background: var(--accent);
+  text-decoration: none;
+  color: var(--fg);
+  overflow: hidden;
+  box-shadow: 0 6px 20px -8px rgba(0,0,0,0.5);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* a soft top sheen — keeps a solid color block from feeling flat/pasted */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,0.14), rgba(255,255,255,0) 45%);
+  pointer-events: none;
+}
+
+.card--live {
+  cursor: pointer;
+}
+
+.card--live:active {
+  transform: scale(0.985);
+}
+
+@media (hover: hover) {
+  .card--live:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px -10px rgba(0,0,0,0.6);
+  }
+}
+
+.card-mark {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  color: var(--fg);
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.card-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--fg);
+  position: relative;
+}
+
+.tag {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 100px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.tag--live {
+  color: var(--accent);
+  background: var(--fg);
+  font-weight: 500;
+}
+
+.tag--soon {
+  color: var(--fg);
+  background: rgba(0,0,0,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--fg);
+  opacity: 0.92;
+  margin: 0 0 10px;
+  max-width: 48ch;
+  position: relative;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--fg);
+  position: relative;
+}
+
+.arrow {
+  transition: transform 0.18s ease;
+}
+
+.card--live:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* ---------------------------------------------
+   Signature marks — small motion, respects reduced-motion
+--------------------------------------------- */
+.mark-ring {
+  transform-origin: 24px 24px;
+  animation: pulse-ring 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%, 100% { r: 9; opacity: 0.55; }
+  50% { r: 11; opacity: 1; }
+}
+
+.mark-breath {
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark-ring, .mark-breath {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------
+   Footer
+--------------------------------------------- */
+.site-footer {
+  padding: 24px 0 56px;
+  border-top: 1px solid var(--hairline);
+}
+
+.site-footer p {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--muted-dim);
+  letter-spacing: 0.04em;
+  margin: 20px 0 0;
+}
+
+/* ---------------------------------------------
+   Wider viewports — laptop, secondary priority
+--------------------------------------------- */
+@media (min-width: 720px) {
+  main {
+    max-width: 920px;
+    padding: 0 32px;
+  }
+
+  .hero {
+    padding: 88px 0 56px;
+  }
+
+  .shelf {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-bottom: 64px;
+  }
+
+  .shelf-label {
+    grid-column: 1 / -1;
+  }
+
+  .card {
+    flex-direction: column;
+    margin-bottom: 0;
+    height: 100%;
+  }
+
+  .card-mark {
+    margin-bottom: 4px;
+  }
+
+  .card-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .tag {
+    order: -1;
+  }
+}
