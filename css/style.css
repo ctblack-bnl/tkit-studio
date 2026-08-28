@@ -259,7 +259,8 @@ main {
 .site-footer p {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--muted-dim);
+  color: var(--paper);
+  font-weight: 500;
   letter-spacing: 0.04em;
   margin: 20px 0 0;
 }
